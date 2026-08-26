@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Swarm V3 (Supernova)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .ui-container {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+        .ui-btn {
+            color: rgba(255, 255, 255, 0.6);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            user-select: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: right;
+            pointer-events: auto;
+        }
+        .ui-btn:hover {
+            color: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transform: translateX(-5px);
+        }
+        #hint {
+            position: absolute;
+            bottom: 120px;
+            right: 40px;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 11px;
+            z-index: 9999;
+            pointer-events: none;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="hint">Right-Click: Change Physics<br>Middle-Click: Change Theme</div>
+    <div class="ui-container">
+        <div id="ui-theme" class="ui-btn">Theme: Cyberpunk</div>
+        <div id="ui-mode" class="ui-btn">Physics: Vortex</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
